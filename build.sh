@@ -15,8 +15,9 @@ php ../snesbuttons.php
 )
 find build -name "*.svg"  -print0 | xargs -0 -P $(nproc) -i "$0" svg2png "{}" \;
 
+test -d dist && rm -rf dist
 mkdir dist
-find dist -type f -delete
+
 find build -type f -not -name "*.scad" -exec cp "{}" dist \;
 
 

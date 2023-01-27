@@ -1,3 +1,3 @@
-$fn=64;
+$fn=256;
 use <icons.scad>
 !projection()joystick(1);
