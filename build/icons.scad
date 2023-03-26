@@ -97,7 +97,7 @@ module led(num, lid = true) {
   }
 
   if (lid)
-    for (r = [ -60, -30, 0, 30, 60 ]) rotate([ 0, 0, r ]) hull() {
+    for (r = [ -30, 0, 30]) rotate([ 0, 0, r ]) hull() {
         translate([ 0, 8, 0 ]) cylinder(d = 1, h = 1);
         translate([ 0, 15, 0 ]) cylinder(d = 1, h = 1);
       }

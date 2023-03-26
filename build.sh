@@ -7,11 +7,12 @@ find build -type f -not -name "*.scad" -delete
 
 
 
-find build -type f -not -name icons.scad -name "*.scad" -print0 | xargs -0 -P $(nproc) -i  "$0" scad2svg "{}"
+find build -type f -not -name icons.scad -not -name logo.scad -name "*.scad" -print0 | xargs -0 -P $(nproc) -i  "$0" scad2svg "{}"
 
 (
 cd build
 php ../snesbuttons.php
+php ../logo.php
 )
 find build -name "*.svg"  -print0 | xargs -0 -P $(nproc) -i "$0" svg2png "{}" \;
 
